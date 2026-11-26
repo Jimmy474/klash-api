@@ -1,0 +1,54 @@
+product: jvm/lib
+
+description: "Kotlin library for clash of clans api"
+
+dependencies:
+  - $ktor.client.core
+  - $ktor.client.java
+  - $ktor.client.contentNegotiation
+  - $ktor.serialization.kotlinx.json
+  - $ktor.serialization
+  - $ktor.client.resources
+  - $ktor.client.auth
+  - $libs.ktor.client.logging
+  - $kotlin.serialization.core
+  - $kotlin.serialization.json
+  - $libs.slf4j.api
+
+test-dependencies:
+  - $libs.ktor.client.mock
+  - $libs.logback.classic
+  - org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0
+
+settings:
+  jvm:
+    jdk:
+      version: 17
+  kotlin:
+    serialization: 
+      version: 1.13.0
+      enabled: true
+  ktor:
+    version: 3.6.1
+    enabled: true
+  publishing:
+    enabled: true
+    group: io.github.Jimmy474
+    artifactId: klashapi
+    version: 0.1.0-alpha.1
+
+    mavenCentral: enabled
+    signArtifacts: true
+    publishSources: true
+
+    pom:
+      name: KlashAPI
+      description: Kotlin JVM client library for the Clash of Clans API
+      url: https://github.com/Jimmy474/KlashAPI
+      scm:
+        url: https://github.com/Jimmy474/KlashAPI
+      developers:
+        - name: Jaimin Vashi
+      licenses:
+        - name: MIT
+          url: https://opensource.org/license/MIT
